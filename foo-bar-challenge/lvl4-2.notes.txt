@@ -1,0 +1,1 @@
+6 {'dimensions': [237, 100], 'your_position': [132, 84], 'trainer_position': [156, 6], 'distance': 182}
