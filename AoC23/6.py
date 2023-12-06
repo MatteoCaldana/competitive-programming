@@ -31,18 +31,13 @@ def solve(times, dists):
     sol *= math.floor(n2) - math.ceil(n1) + 1
 
   print("sol:", sol)
-  
-def parse_v1(data):
+
+
+def parse(data):
   times = [float(n) for n in re.findall(r"\d+", data[0])]
   dists = [float(n) for n in re.findall(r"\d+", data[1])]
   return times, dists
 
-def parse_v2(data):
-  for i in range(len(data)):
-    data[i] = re.sub(" ", "", data[i])
-  times = [float(n) for n in re.findall(r"\d+", data[0])]
-  dists = [float(n) for n in re.findall(r"\d+", data[1])]
-  return times, dists
 
-solve(*parse_v1(data))
-solve(*parse_v2(data))
+solve(*parse(data))
+solve(*parse([re.sub(" ", "", line) for line in data]))
